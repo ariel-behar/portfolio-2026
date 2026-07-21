@@ -1,3 +1,26 @@
+import {
+  danielProject,
+  documents,
+  languages,
+  mockupProjects,
+  projects,
+  skills,
+  threeJsProjects,
+} from "@/data";
+
+const dataCounts = [
+  { label: "projects", count: projects.length },
+  { label: "mockup projects", count: mockupProjects.length },
+  { label: "three.js projects", count: threeJsProjects.length },
+  { label: "skill groups", count: skills.length },
+  { label: "languages", count: languages.length },
+  {
+    label: "documents",
+    count: documents.resume.length + documents.reference.length + documents.certificate.length,
+  },
+  { label: "bonus project", count: danielProject ? 1 : 0 },
+];
+
 const swatches = [
   { name: "primary", className: "bg-primary text-primary-content" },
   { name: "secondary", className: "bg-secondary text-secondary-content" },
@@ -35,6 +58,14 @@ export default function Home() {
             className={`rounded-box p-4 text-center text-sm font-medium ${swatch.className}`}
           >
             {swatch.name}
+          </div>
+        ))}
+      </div>
+
+      <div className="flex w-full max-w-2xl flex-wrap justify-center gap-3">
+        {dataCounts.map((item) => (
+          <div key={item.label} className="rounded-box bg-base-200 px-4 py-2 text-sm">
+            <span className="font-semibold text-secondary">{item.count}</span> {item.label}
           </div>
         ))}
       </div>

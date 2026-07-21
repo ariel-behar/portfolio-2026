@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Saira, Peralta, Bangers } from "next/font/google";
+import { SITE_NAME, SITE_TAGLINE } from "@/constants";
 import "./globals.css";
 
 const saira = Saira({
@@ -24,8 +25,8 @@ const bangers = Bangers({
 });
 
 export const metadata: Metadata = {
-  title: "Ariel Behar - Web Developer Portfolio",
-  description: "Design & Development Done Differently",
+  title: `${SITE_NAME} - Web Developer Portfolio`,
+  description: SITE_TAGLINE,
 };
 
 export default function RootLayout({
