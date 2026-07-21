@@ -1,27 +1,74 @@
 @import "tailwindcss";
-@plugin "daisyui";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@plugin "daisyui" {
+  themes: false;
+}
+
+/* Custom theme, ported from the old portfolio's MUI palette (client/src/theme/theme.tsx) */
+@plugin "daisyui/theme" {
+  name: "arielbehar";
+  default: true;
+  prefersdark: true;
+  color-scheme: dark;
+
+  /* text.secondary sits on top of dark section backgrounds almost everywhere in the old site */
+  --color-base-100: #262626;
+  --color-base-200: #202020;
+  --color-base-300: #1a1a1a;
+  --color-base-content: #e0e0e0;
+
+  /* custom.blue.main */
+  --color-primary: #0d47a1;
+  --color-primary-content: #f2f6ff;
+
+  /* custom.green.main / text.tertiary */
+  --color-secondary: #4caf50;
+  --color-secondary-content: #0c2410;
+
+  /* custom.chip.yellow */
+  --color-accent: #fdeb50;
+  --color-accent-content: #332b00;
+
+  /* custom.black.main, paired with text.secondary as its content color */
+  --color-neutral: #2e2e2e;
+  --color-neutral-content: #e0e0e0;
+
+  /* custom.chip.blue */
+  --color-info: #2f85db;
+  --color-info-content: #eaf3fc;
+
+  /* custom.chip.green */
+  --color-success: #419745;
+  --color-success-content: #eafbea;
+
+  /* amber used on the old "certificates" document card gradient */
+  --color-warning: #f0ad4e;
+  --color-warning-content: #402c05;
+
+  /* MUI error.light, used for the contact form's error state */
+  --color-error: #e57373;
+  --color-error-content: #3d0a0a;
+
+  --radius-selector: 1rem;
+  --radius-field: 0.5rem;
+  --radius-box: 1.25rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --font-sans: var(--font-saira), sans-serif;
+  --font-display: var(--font-peralta), serif;
+  --font-mesh: var(--font-bangers), cursive;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* text.muted.main and text.muted.light (== old custom.grey.darker) */
+  --color-muted: #636c72;
+  --color-muted-light: #9e9e9e;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
