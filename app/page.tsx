@@ -1,102 +1,20 @@
-import {
-  danielProject,
-  documents,
-  languages,
-  mockupProjects,
-  projects,
-  skills,
-  threeJsProjects,
-} from "@/data";
 import { NAV_LINKS } from "@/constants";
-import { Loader, Navigation } from "@/components/Layout";
+import { PortfolioShell } from "@/components/Layout";
 
-const dataCounts = [
-  { label: "projects", count: projects.length },
-  { label: "mockup projects", count: mockupProjects.length },
-  { label: "three.js projects", count: threeJsProjects.length },
-  { label: "skill groups", count: skills.length },
-  { label: "languages", count: languages.length },
-  {
-    label: "documents",
-    count: documents.resume.length + documents.reference.length + documents.certificate.length,
-  },
-  { label: "bonus project", count: danielProject ? 1 : 0 },
-];
-
-const swatches = [
-  { name: "primary", className: "bg-primary text-primary-content" },
-  { name: "secondary", className: "bg-secondary text-secondary-content" },
-  { name: "accent", className: "bg-accent text-accent-content" },
-  { name: "neutral", className: "bg-neutral text-neutral-content" },
-  {
-    name: "base-100",
-    className: "bg-base-100 text-base-content border border-base-300",
-  },
-  { name: "base-200", className: "bg-base-200 text-base-content" },
-  { name: "base-300", className: "bg-base-300 text-base-content" },
-  { name: "info", className: "bg-info text-info-content" },
-  { name: "success", className: "bg-success text-success-content" },
-  { name: "warning", className: "bg-warning text-warning-content" },
-  { name: "error", className: "bg-error text-error-content" },
-  { name: "muted", className: "bg-muted text-base-100" },
-  { name: "muted-light", className: "bg-muted-light text-base-100" },
-];
-
+// Each placeholder section below stands in for a real portfolio section
+// (About, Projects, Skills, ...), built one at a time in later phases.
 export default function Home() {
   return (
-    <main className="flex flex-1 flex-col items-center gap-12 px-6 py-16">
-      <Navigation visible />
-
-      <div className="space-y-2 text-center">
-        <h1 className="font-display text-5xl md:text-6xl">ARIEL BEHAR</h1>
-        <p className="text-lg text-base-content/80">
-          Design &amp; Development Done Differently
-        </p>
-        <p className="font-mesh text-2xl text-secondary">I ♥ THREE JS</p>
-      </div>
-
-      <div className="grid w-full max-w-2xl grid-cols-2 gap-3 sm:grid-cols-4">
-        {swatches.map((swatch) => (
-          <div
-            key={swatch.name}
-            className={`rounded-box p-4 text-center text-sm font-medium ${swatch.className}`}
-          >
-            {swatch.name}
-          </div>
-        ))}
-      </div>
-
-      <div className="flex w-full max-w-2xl flex-wrap justify-center gap-3">
-        {dataCounts.map((item) => (
-          <div key={item.label} className="rounded-box bg-base-200 px-4 py-2 text-sm">
-            <span className="font-semibold text-secondary">{item.count}</span> {item.label}
-          </div>
-        ))}
-      </div>
-
-      <div className="w-full max-w-2xl space-y-2">
-        <p className="text-sm text-muted-light">
-          Loader preview (contained to this box, not full-screen, just for this smoke test):
-        </p>
-        <div className="relative h-40 overflow-hidden rounded-box border border-base-300 transform-gpu">
-          <Loader />
-        </div>
-      </div>
-
-      <div className="w-full space-y-2 text-center">
-        <p className="text-sm text-muted-light">
-          Nav scroll test — click a link above, it should smooth-scroll to the matching section below:
-        </p>
-        {NAV_LINKS.map((link) => (
-          <section
-            key={link.id}
-            id={link.id}
-            className="flex min-h-[50vh] w-full items-center justify-center bg-base-200 odd:bg-base-300"
-          >
-            <p className="font-display text-3xl">{link.label}</p>
-          </section>
-        ))}
-      </div>
-    </main>
+    <PortfolioShell>
+      {NAV_LINKS.map((link) => (
+        <section
+          key={link.id}
+          id={link.id}
+          className="flex min-h-screen w-full items-center justify-center bg-base-200 odd:bg-base-300"
+        >
+          <p className="font-display text-3xl">{link.label}</p>
+        </section>
+      ))}
+    </PortfolioShell>
   );
 }

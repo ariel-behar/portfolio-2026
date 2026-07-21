@@ -79,3 +79,67 @@ body {
     scroll-behavior: smooth;
   }
 }
+
+/* Hero intro choreography (Phase 3). Elements animate on mount via animation-delay,
+   no JS/animation-library required. Every keyframe declares an explicit "from" state
+   and is applied with fill-mode "both", so the animation itself owns the pre-delay and
+   post-completion state — no separate static utility class needs to match it. */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fly-in {
+  from {
+    opacity: 0;
+    transform: translate(var(--fly-x, 0), var(--fly-y, 0));
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes hero-hide {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes main-reveal {
+  from {
+    opacity: 0.5;
+    top: 100vh;
+  }
+  to {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+/* Single override point for every element carrying one of the animations above. */
+@media (prefers-reduced-motion: reduce) {
+  .hero-anim {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
