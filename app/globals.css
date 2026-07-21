@@ -72,3 +72,10 @@
 body {
   font-family: var(--font-sans);
 }
+
+/* Nav links scroll to section ids via plain <a href="#id">; no JS scroll library needed. */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}

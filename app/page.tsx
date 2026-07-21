@@ -7,6 +7,8 @@ import {
   skills,
   threeJsProjects,
 } from "@/data";
+import { NAV_LINKS } from "@/constants";
+import { Loader, Navigation } from "@/components/Layout";
 
 const dataCounts = [
   { label: "projects", count: projects.length },
@@ -43,6 +45,8 @@ const swatches = [
 export default function Home() {
   return (
     <main className="flex flex-1 flex-col items-center gap-12 px-6 py-16">
+      <Navigation visible />
+
       <div className="space-y-2 text-center">
         <h1 className="font-display text-5xl md:text-6xl">ARIEL BEHAR</h1>
         <p className="text-lg text-base-content/80">
@@ -67,6 +71,30 @@ export default function Home() {
           <div key={item.label} className="rounded-box bg-base-200 px-4 py-2 text-sm">
             <span className="font-semibold text-secondary">{item.count}</span> {item.label}
           </div>
+        ))}
+      </div>
+
+      <div className="w-full max-w-2xl space-y-2">
+        <p className="text-sm text-muted-light">
+          Loader preview (contained to this box, not full-screen, just for this smoke test):
+        </p>
+        <div className="relative h-40 overflow-hidden rounded-box border border-base-300 transform-gpu">
+          <Loader />
+        </div>
+      </div>
+
+      <div className="w-full space-y-2 text-center">
+        <p className="text-sm text-muted-light">
+          Nav scroll test — click a link above, it should smooth-scroll to the matching section below:
+        </p>
+        {NAV_LINKS.map((link) => (
+          <section
+            key={link.id}
+            id={link.id}
+            className="flex min-h-[50vh] w-full items-center justify-center bg-base-200 odd:bg-base-300"
+          >
+            <p className="font-display text-3xl">{link.label}</p>
+          </section>
         ))}
       </div>
     </main>
