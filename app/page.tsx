@@ -1,12 +1,15 @@
 import { NAV_LINKS } from "@/constants";
 import { PortfolioShell } from "@/components/Layout";
+import { TitleSection } from "@/components/Sections";
 
 // Each placeholder section below stands in for a real portfolio section
 // (About, Projects, Skills, ...), built one at a time in later phases.
 export default function Home() {
   return (
     <PortfolioShell>
-      {NAV_LINKS.map((link) => (
+      <TitleSection />
+
+      {NAV_LINKS.filter((link) => link.id !== "intro").map((link) => (
         <section
           key={link.id}
           id={link.id}
