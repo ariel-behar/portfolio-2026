@@ -25,8 +25,8 @@ export function AboutSection() {
         className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-linear-to-b from-transparent to-black/50"
       />
 
-      <div className="relative mx-auto max-w-[1200px] pl-2 min-[900px]:pl-0">
-        <div className="flow-root max-w-[900px]">
+      <div className="relative mx-auto max-w-300 pl-2 min-[900px]:pl-0">
+        <div className="flow-root max-w-225">
           <h4 className="mb-4 font-sans text-3xl">About Me</h4>
 
           <div className="relative float-right mb-2 ml-4 h-[175px] w-[204px] min-[600px]:hidden">

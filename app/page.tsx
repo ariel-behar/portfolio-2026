@@ -1,16 +1,20 @@
 import { NAV_LINKS } from "@/constants";
-import { PortfolioShell } from "@/components/Layout";
-import { AboutSection, TitleSection } from "@/components/Sections";
+import { PatternedBackground, PortfolioShell } from "@/components/Layout";
+import { AboutSection, ProjectsSection, TitleSection } from "@/components/Sections";
 
-const BUILT_SECTION_IDS = ["intro", "about"];
+const BUILT_SECTION_IDS = ["intro", "about", "projects"];
 
 // Each placeholder section below stands in for a real portfolio section
-// (Projects, Skills, ...), built one at a time in later phases.
+// (ThreeJs, Skills, ...), built one at a time in later phases.
 export default function Home() {
   return (
     <PortfolioShell>
       <TitleSection />
       <AboutSection />
+
+      <PatternedBackground>
+        <ProjectsSection />
+      </PatternedBackground>
 
       {NAV_LINKS.filter((link) => !BUILT_SECTION_IDS.includes(link.id)).map((link) => (
         <section

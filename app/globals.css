@@ -135,6 +135,17 @@ body {
   }
 }
 
+/* Projects section (Phase 6): pulsing "click a thumbnail" placeholder prompt. */
+@keyframes pulse-scale {
+  0%,
+  100% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+
 /* Single override point for every element carrying one of the animations above. */
 @media (prefers-reduced-motion: reduce) {
   .hero-anim {
