@@ -146,6 +146,33 @@ body {
   }
 }
 
+/* Photoshop section (Phase 8): mockup carousel's prev/next arrow icon pulse (was react-multi-carousel's
+   default "revicons" icon font, replaced here with an inline SVG, so the pulse animates size directly
+   instead of font-size). */
+@keyframes carousel-arrow-pulse {
+  0%,
+  100% {
+    width: 30px;
+    height: 30px;
+  }
+  50% {
+    width: 33px;
+    height: 33px;
+  }
+}
+
+/* Photoshop section (Phase 8): Modal primitive's open transition (was MUI's Slide direction="up"). */
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Single override point for every element carrying one of the animations above. */
 @media (prefers-reduced-motion: reduce) {
   .hero-anim {

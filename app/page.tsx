@@ -1,6 +1,6 @@
 import { NAV_LINKS } from "@/constants";
 import { PatternedBackground, PortfolioShell, SectionDivider } from "@/components/Layout";
-import { AboutSection, ProjectsSection, ThreeJsSection, TitleSection } from "@/components/Sections";
+import { AboutSection, PhotoshopSection, ProjectsSection, ThreeJsSection, TitleSection } from "@/components/Sections";
 
 const BUILT_SECTION_IDS = ["intro", "about", "projects"];
 
@@ -16,6 +16,8 @@ export default function Home() {
         <ProjectsSection />
         <SectionDivider />
         <ThreeJsSection />
+        <SectionDivider />
+        <PhotoshopSection />
       </PatternedBackground>
 
       {NAV_LINKS.filter((link) => !BUILT_SECTION_IDS.includes(link.id)).map((link) => (
