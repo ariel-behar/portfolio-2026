@@ -14,7 +14,9 @@ export function DocumentCard({ title, image, alt, gradientClassName, tiltClassNa
     <div
       className={`flex flex-col items-center rounded-[20px] py-5 [text-shadow:1px_1px_5px_#245485] shadow-[0_6px_6px_-3px_rgba(0,0,0,0.2),0_10px_14px_1px_rgba(0,0,0,0.14),0_4px_18px_3px_rgba(0,0,0,0.12)] ${gradientClassName}`}
     >
-      <h4 className="text-[1.9rem] leading-8 text-base-content">{title}</h4>
+      <h4 className="text-[1.7rem] leading-[1.8rem] text-base-content min-[900px]:text-[1.9rem] min-[900px]:leading-8">
+        {title}
+      </h4>
 
       {/* eslint-disable-next-line @next/next/no-img-element -- rendered at a fluid 90% width of
           a responsive parent, not a fixed icon box; see Phase 10 plan notes */}

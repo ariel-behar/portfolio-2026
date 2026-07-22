@@ -2,6 +2,7 @@ import { NAV_LINKS } from "@/constants";
 import { PatternedBackground, PortfolioShell, SectionDivider } from "@/components/Layout";
 import {
   AboutSection,
+  ContactSection,
   DocumentsSection,
   PhotoshopSection,
   ProjectsSection,
@@ -10,10 +11,10 @@ import {
   TitleSection,
 } from "@/components/Sections";
 
-const BUILT_SECTION_IDS = ["intro", "about", "projects", "skills", "documents"];
+const BUILT_SECTION_IDS = ["intro", "about", "projects", "skills", "documents", "contact"];
 
 // Each placeholder section below stands in for a real portfolio section
-// (Documents, ...), built one at a time in later phases.
+// (Bonus, ...), built one at a time in later phases.
 export default function Home() {
   return (
     <PortfolioShell>
@@ -37,6 +38,7 @@ export default function Home() {
         <div className="py-6" />
 
         <DocumentsSection />
+        <ContactSection />
       </PatternedBackground>
 
       {NAV_LINKS.filter((link) => !BUILT_SECTION_IDS.includes(link.id)).map((link) => (
