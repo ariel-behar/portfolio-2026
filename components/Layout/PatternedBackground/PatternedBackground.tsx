@@ -25,7 +25,10 @@ export function PatternedBackground({ children }: PatternedBackgroundProps) {
 export function SectionDivider() {
   return (
     <div className="mx-auto max-w-300 px-4 min-[600px]:px-6">
-      <hr />
+      {/* Tailwind's Preflight zeroes <hr>'s default margin; the old site never overrode
+          it, so its hr keeps the browser default 0.5em (8px) top/bottom — measured on the
+          live old site (Skills→Documents boundary) and restored here explicitly. */}
+      <hr className="my-2" />
     </div>
   );
 }

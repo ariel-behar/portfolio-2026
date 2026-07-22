@@ -1,11 +1,18 @@
 import { NAV_LINKS } from "@/constants";
 import { PatternedBackground, PortfolioShell, SectionDivider } from "@/components/Layout";
-import { AboutSection, PhotoshopSection, ProjectsSection, ThreeJsSection, TitleSection } from "@/components/Sections";
+import {
+  AboutSection,
+  PhotoshopSection,
+  ProjectsSection,
+  SkillsSection,
+  ThreeJsSection,
+  TitleSection,
+} from "@/components/Sections";
 
-const BUILT_SECTION_IDS = ["intro", "about", "projects"];
+const BUILT_SECTION_IDS = ["intro", "about", "projects", "skills"];
 
 // Each placeholder section below stands in for a real portfolio section
-// (Skills, ...), built one at a time in later phases.
+// (Documents, ...), built one at a time in later phases.
 export default function Home() {
   return (
     <PortfolioShell>
@@ -18,6 +25,15 @@ export default function Home() {
         <ThreeJsSection />
         <SectionDivider />
         <PhotoshopSection />
+        <SectionDivider />
+        <SkillsSection />
+        <SectionDivider />
+
+        {/* Old MainView.tsx closes its Container with `<hr /><Box py={3} />` right after
+            Skills — an empty 24px-top/24px-bottom spacer before Documents (outside the
+            Container, full-width) picks up. Kept as its own element here since it isn't
+            part of any section, matching where the old markup placed it. */}
+        <div className="py-6" />
       </PatternedBackground>
 
       {NAV_LINKS.filter((link) => !BUILT_SECTION_IDS.includes(link.id)).map((link) => (

@@ -173,6 +173,18 @@ body {
   }
 }
 
+/* Skills section (Phase 9): "HOVER" hint chevron nudge (was MUI's KeyboardArrowRightIcon
+   animating `left` while position:relative; ported to a transform for the same nudge). */
+@keyframes point-right {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+}
+
 /* Single override point for every element carrying one of the animations above. */
 @media (prefers-reduced-motion: reduce) {
   .hero-anim {
