@@ -2,6 +2,7 @@ import { NAV_LINKS } from "@/constants";
 import { PatternedBackground, PortfolioShell, SectionDivider } from "@/components/Layout";
 import {
   AboutSection,
+  DocumentsSection,
   PhotoshopSection,
   ProjectsSection,
   SkillsSection,
@@ -9,7 +10,7 @@ import {
   TitleSection,
 } from "@/components/Sections";
 
-const BUILT_SECTION_IDS = ["intro", "about", "projects", "skills"];
+const BUILT_SECTION_IDS = ["intro", "about", "projects", "skills", "documents"];
 
 // Each placeholder section below stands in for a real portfolio section
 // (Documents, ...), built one at a time in later phases.
@@ -34,6 +35,8 @@ export default function Home() {
             Container, full-width) picks up. Kept as its own element here since it isn't
             part of any section, matching where the old markup placed it. */}
         <div className="py-6" />
+
+        <DocumentsSection />
       </PatternedBackground>
 
       {NAV_LINKS.filter((link) => !BUILT_SECTION_IDS.includes(link.id)).map((link) => (
