@@ -337,10 +337,24 @@ Verified via Playwright against `https://www.arielbehar.com` (colors/sizes/trans
 
 Verified via Playwright against `https://www.arielbehar.com` and the new dev server (`getComputedStyle`, not eyeballed) at both 1920px and 390px, for both the `HumbleBeginnings` and (post-Reveal-click) `SleepyDaniel` states: section background gradient/border, heading font-size/line-height/color/margins at both breakpoints, paragraph font-size/line-height/color/margin/text-indent, Reveal button background/text-color/padding/margin/border-radius/box-shadow, Bonus-image display/float/height at both breakpoints, signature image max-width at both breakpoints, Sleepy Daniel box background/text-shadow, heading and h6-label color/font-size/line-height/margin at both breakpoints, close-icon position/size/color, and grid column count at both breakpoints (`repeat(1, ...)` mobile, `repeat(12, ...)` desktop) — all matched exactly. Zero console errors in every pass; `tsc --noEmit` and `eslint` both clean.
 
-## Phase 13 — Footer
+## Phase 13 — Footer ✅ done
 
-- [ ] Copyright with dynamic year, link back to site.
-- [ ] Verify.
+- [x] Copyright with dynamic year, link back to site.
+- [x] Verify.
+
+**Lives in `components/Layout/Footer/`, not `Sections/`** — unlike Bonus/Documents/Contact, the Footer isn't a scrollable portfolio section (no `NAV_LINKS` entry, no `id` target), it's structural page chrome, same category as `Navigation`/`PortfolioShell`/`PatternedBackground` which already live in `Layout/`. Rendered as the last child inside `PatternedBackground`, right after `BonusSection`, matching old `MainView.tsx` (`Footer` is the last element inside the same `StyledBox` that wraps Documents/Contact/Bonus).
+
+**Plain Server Component, no `useState`/`useEffect` needed for the year**: the old site computed `currentYear` in a `useEffect` purely to dodge a CRA/client-only-rendering concern that doesn't apply here — `new Date().getFullYear()` is computed directly in the component body, no client directive required.
+
+**`color='text.muted.main'` (correctly `.main`-suffixed, not the bare bug variant)**: confirmed via live measurement this one really does apply on the old site (`rgb(99,108,114)` = `#636c72`), unlike the bare `text.muted` on Sleepy Daniel's last line (Phase 12) — mapped to the already-existing `text-muted` custom utility (`--color-muted`, defined back when Contact's form fields were built). `text.secondary` (the "Ariel Behar" link) reused the established `text-base-content` mapping without incident.
+
+**Simplified one layer of nesting**: the old site wraps the `<p>` in an MUI `Stack` (`display:flex; justify-content:center`) purely to horizontally center it — for a single line of text that never wraps, a flex-centered shrink-to-fit box and a full-width block with `text-align:center` render pixel-identical, so the extra wrapper was dropped (`text-center` directly on the `<p>`) rather than ported as a no-op flex container.
+
+**MUI-to-Tailwind spacing conversions applied**: `Stack py={2}` → `py-4` (16px, converted via measured pixels not the bare `2`, per [[feedback-mui-spacing-unit-conversion]]); `Link ml={1}` → `ml-2` (8px).
+
+**Now-dead placeholder code removed**: `app/page.tsx`'s per-`NAV_LINKS`-id placeholder-section loop (and its `BUILT_SECTION_IDS` gate) stood in for sections not yet built since Phase 3 — with Bonus (Phase 12) done, all seven `NAV_LINKS` ids are real sections, so the loop always produced an empty array. Removed both the loop and the now-unused `BUILT_SECTION_IDS`/`NAV_LINKS` import from `page.tsx` rather than leave dead code in place.
+
+Verified via Playwright against `https://www.arielbehar.com` and the new dev server (`getComputedStyle`, not eyeballed): footer background, padding, text color/font-size/line-height, link color/margin-left/underline/href all matched exactly. Zero console errors; `tsc --noEmit` and `eslint` both clean.
 
 ## Phase 14 — Cross-cutting polish & launch readiness
 
