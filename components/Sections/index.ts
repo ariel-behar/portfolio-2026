@@ -1,4 +1,5 @@
 export * from "./About";
+export * from "./Bonus";
 export * from "./Contact";
 export * from "./Documents";
 export * from "./Hero";
