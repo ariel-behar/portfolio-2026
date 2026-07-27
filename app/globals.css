@@ -80,6 +80,25 @@ body {
   }
 }
 
+/* Phase 14 accessibility pass: none of the entrance/hover/looping keyframe animations below
+   (fade-in, fly-in, hero-hide, main-reveal, pulse-scale, carousel-arrow-pulse, slide-up,
+   point-right, scale-fade-in) were otherwise guarded — several loop forever (pulse-scale,
+   carousel-arrow-pulse, point-right), which is exactly the sustained-motion case this media
+   query exists for. Duration is cut to near-zero rather than `animation: none`, since most of
+   these declare an explicit "from" state with fill-mode "both" (see the note above) — an
+   element relying on its animation to reach opacity:1 would get stuck invisible if the
+   animation were removed outright instead of just made instant. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* Hero intro choreography (Phase 3). Elements animate on mount via animation-delay,
    no JS/animation-library required. Every keyframe declares an explicit "from" state
    and is applied with fill-mode "both", so the animation itself owns the pre-delay and

@@ -22,15 +22,15 @@ export function PortfolioShell({ children }: PortfolioShellProps) {
 
       <Hero hiding={revealed} onExplore={() => setRevealed(true)} />
 
-      <div
-        className={
-          revealed
-            ? "absolute inset-x-0 z-10 animate-[main-reveal_2.5s_ease_both]"
-            : "absolute inset-x-0 top-[100vh] hidden"
-        }
-      >
-        {children}
-      </div>
+      {/* Not mounted at all pre-reveal (not just CSS-hidden): every section below, including
+          ThreeJsSection's dynamically-imported ~1.2MB Three.js chunk, would otherwise still
+          mount client-side (and fetch that chunk) immediately on page load — `next/dynamic`'s
+          `ssr:false` only skips server rendering, mounting is a React-tree concern independent
+          of CSS visibility. Confirmed via a network-request check against the production build
+          before/after this change (Phase 14 performance pass). */}
+      {revealed && (
+        <div className="absolute inset-x-0 z-10 animate-[main-reveal_2.5s_ease_both]">{children}</div>
+      )}
     </main>
   );
 }

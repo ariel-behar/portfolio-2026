@@ -11,7 +11,12 @@ export function HumbleBeginnings({ onReveal }: HumbleBeginningsProps) {
         {/* eslint-disable-next-line @next/next/no-img-element -- intrinsic size, no next/image equivalent needed here */}
         <img src={`${S3_BASE_URL}/bonus.png`} alt="Bonus" className="hidden min-[900px]:block" />
 
-        <div className="px-4">
+        {/* min-w-0: flex items default to min-width:auto, so this column's content (the floated
+            mobile image + long-word text) could refuse to shrink below its own min-content width
+            and push the row wider than the viewport at narrow widths — confirmed via a page-wide
+            horizontal-overflow sweep (Phase 14), not visible at any width this project otherwise
+            spot-checks (320px/600px only). */}
+        <div className="min-w-0 px-4">
           {/* text.secondary in the old theme is #e0e0e0 (grey) — this project's text-base-content,
               not Tailwind/DaisyUI's own "secondary" (green). See [[feedback-mui-color-prop-bug]]. */}
           <h4 className="mb-4 text-center text-[2.2rem] leading-[2.3rem] text-base-content min-[900px]:text-[2.5rem] min-[900px]:leading-[2.6rem]">
