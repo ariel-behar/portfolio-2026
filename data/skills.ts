@@ -2,9 +2,17 @@ import type { Skill } from "@/types";
 
 export const skills: Skill[] = [
   {
+    title: "Artificial Intelligence",
+    technologies: [
+      { technology: "Claude", proficiency: 1, image: "claude.jpg", displayTechnology: true },
+      { technology: "ChatGPT", proficiency: 1, image: "chat-gpt.png", displayTechnology: true },
+      { technology: "Github Copilot", proficiency: 1, image: "github-copilot.png", displayTechnology: true },
+    ],
+  },
+  {
     title: "Javascript Frameworks & Superscript",
     technologies: [
-      { technology: "Next JS", proficiency: 2, image: "nextjs.png", displayTechnology: true },
+      { technology: "Next JS", proficiency: 1, image: "nextjs.png", displayTechnology: true },
       { technology: "React", proficiency: 1, image: "react.png", displayTechnology: true },
       { technology: "TypeScript", proficiency: 1, image: "typescript.png", displayTechnology: true },
       { technology: "jQuery", proficiency: 1, image: "jquery.png", displayTechnology: true },
@@ -53,8 +61,8 @@ export const skills: Skill[] = [
   {
     title: "Internationalization",
     technologies: [
-      { technology: "i18next", proficiency: 2, image: "i18next.png", displayTechnology: true },
-      { technology: "Next-Intl", proficiency: 2, image: "next-intl.png", displayTechnology: true },
+      { technology: "i18next", proficiency: 1, image: "i18next.png", displayTechnology: true },
+      { technology: "Next-Intl", proficiency: 1, image: "next-intl.png", displayTechnology: true },
     ],
   },
   {
@@ -69,7 +77,7 @@ export const skills: Skill[] = [
     title: "Design, 3D Modeling & Video Production",
     technologies: [
       { technology: "Photoshop", proficiency: 1, image: "photoshop.png", displayTechnology: true },
-      { technology: "Figma", proficiency: 2, image: "figma.png", displayTechnology: true },
+      { technology: "Figma", proficiency: 1, image: "figma.png", displayTechnology: true },
       { technology: "Blender", proficiency: 3, image: "blender.png", displayTechnology: true },
       { technology: "Premiere", proficiency: 3, image: "premiere.png", displayTechnology: true },
     ],
@@ -81,21 +89,23 @@ export const skills: Skill[] = [
       { technology: "Heroku", proficiency: 1, image: "heroku.png", displayTechnology: true },
       { technology: "Render", proficiency: 1, image: "render.png", displayTechnology: true },
       { technology: "Hostgator", proficiency: 1, image: "hostgator.png", displayTechnology: true },
-      { technology: "cPanel", proficiency: 2, image: "cpanel.png", displayTechnology: true },
+      { technology: "cPanel", proficiency: 1, image: "cpanel.png", displayTechnology: false },
+      { technology: "Superhosting", proficiency: 1, image: "superhosting.jpg", displayTechnology: true },
     ],
   },
   {
     title: "Cloud Storage",
     technologies: [
       { technology: "Google Cloud", proficiency: 3, image: "google-cloud.png", displayTechnology: true },
-      { technology: "AWS S3", proficiency: 2, image: "aws-s3.png", displayTechnology: true },
+      { technology: "AWS S3", proficiency: 1, image: "aws-s3.png", displayTechnology: true },
     ],
   },
   {
-    title: "Artificial Intelligence",
+    title: "SEO",
     technologies: [
-      { technology: "ChatGPT", proficiency: 1, image: "chat-gpt.png", displayTechnology: true },
-      { technology: "Github Copilot", proficiency: 1, image: "github-copilot.png", displayTechnology: true },
+      { technology: "Serpstat", proficiency: 1, image: "serpstat.jpg", displayTechnology: true },
+      { technology: "Netpeak", proficiency: 1, image: "netpeak.jpg", displayTechnology: true },
+      { technology: "Search Console", proficiency: 1, image: "search-console.jpg", displayTechnology: true },
     ],
   },
   {
