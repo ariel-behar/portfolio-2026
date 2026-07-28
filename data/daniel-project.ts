@@ -11,7 +11,7 @@ export const danielProject: DanielProject = {
   technologies: ["HTML", "CSS", "XML"],
   month: "March",
   year: 2017,
-  url: "http://sleepydaniel.arielbehar.com/",
+  url: "http://sleepy-daniel.arielbehar.com/",
   type: "MPA",
   category: "real",
   notes: [],
