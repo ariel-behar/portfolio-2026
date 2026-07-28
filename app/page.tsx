@@ -4,6 +4,7 @@ import {
   BonusSection,
   ContactSection,
   DocumentsSection,
+  EmploymentSection,
   PhotoshopSection,
   ProjectsSection,
   SkillsSection,
@@ -18,6 +19,8 @@ export default function Home() {
       <AboutSection />
 
       <PatternedBackground>
+        <EmploymentSection />
+        <SectionDivider />
         <ProjectsSection />
         <SectionDivider />
         <ThreeJsSection />

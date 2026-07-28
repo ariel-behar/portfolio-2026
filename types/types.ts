@@ -61,6 +61,23 @@ export interface DanielProject {
   notes: ProjectNote[];
 }
 
+// Employment
+
+export interface EmploymentPosition {
+  id: number;
+  order: number;
+  role: string;
+  company: string;
+  companyUrl: string;
+  companyLogo: string;
+  companyDescription: string;
+  startYear: number;
+  // Omitted for the current, still-ongoing position.
+  endYear?: number;
+  focus: string[];
+  contribution: string;
+}
+
 // Document
 
 export type DocumentCategory = "resume" | "reference" | "certificate";
