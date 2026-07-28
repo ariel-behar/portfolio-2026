@@ -20,6 +20,8 @@ export function TitleSection() {
             <br className="min-[900px]:hidden" />
             &nbsp;Done Differently
           </h2>
+
+          <p className="mt-2 text-xs tracking-[0.2em] text-neutral/60 uppercase">- Est. 2017 -</p>
         </div>
       </div>
     </section>

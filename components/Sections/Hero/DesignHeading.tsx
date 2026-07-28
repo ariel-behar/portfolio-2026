@@ -7,7 +7,8 @@ export function DesignHeading() {
           for screen-reader users with nothing to distinguish them. Phase 14 accessibility fix,
           not a fidelity port. */}
       <p className="font-display text-4xl">ARIEL BEHAR</p>
-      <p className="mb-2 text-xl">Web Design &amp; Development</p>
+      <p className="text-xl">Web Design &amp; Development</p>
+      <p className="mb-2 text-xs tracking-[0.2em] text-neutral/60 uppercase mt-1">- Est. 2017 -</p>
     </div>
   );
 }
