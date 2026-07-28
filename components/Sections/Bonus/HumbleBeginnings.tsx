@@ -6,7 +6,7 @@ interface HumbleBeginningsProps {
 
 export function HumbleBeginnings({ onReveal }: HumbleBeginningsProps) {
   return (
-    <div className="animate-[fade-in_0.3s_ease_both] py-8">
+    <div className="animate-[fade-in_1s_ease_both] py-8">
       <div className="mx-auto flex max-w-300 flex-row items-center justify-center px-4 min-[600px]:px-6">
         {/* eslint-disable-next-line @next/next/no-img-element -- intrinsic size, no next/image equivalent needed here */}
         <img src={`${S3_BASE_URL}/bonus.png`} alt="Bonus" className="hidden min-[900px]:block" />
