@@ -113,6 +113,8 @@ export const skills: Skill[] = [
     technologies: [
       { technology: "Git", proficiency: 1, image: "git.png", displayTechnology: true },
       { technology: "Github", proficiency: 1, image: "github.png", displayTechnology: true },
+      { technology: "Bitbucket", proficiency: 1, image: "bitbucket.jpg", displayTechnology: true },
+      { technology: "Gitea", proficiency: 1, image: "gitea.jpg", displayTechnology: true },
     ],
   },
 ];
