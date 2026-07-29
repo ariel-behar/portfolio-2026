@@ -70,6 +70,10 @@ export interface EmploymentPosition {
   company: string;
   companyUrl: string;
   companyLogo: string;
+  // Tailwind bg-* class the logo sits on; defaults to bg-white. Override when the logo's own
+  // baked-in background isn't white/transparent, so the letterboxed circle edge blends in
+  // instead of showing a mismatched ring (e.g. Candy Catz's logo is baked onto dark neutral).
+  companyLogoBg?: string;
   companyDescription: string;
   startYear: number;
   // Omitted for the current, still-ongoing position.

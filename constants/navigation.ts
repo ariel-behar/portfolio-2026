@@ -8,9 +8,9 @@ export interface NavLink {
 export const NAV_LINKS: NavLink[] = [
   { id: "intro", label: "INTRO" },
   { id: "about", label: "ABOUT" },
-  { id: "employment", label: "EMPLOYMENT" },
   { id: "projects", label: "PROJECTS" },
   { id: "skills", label: "SKILLS" },
+  { id: "employment", label: "PRO JOURNEY" },
   { id: "documents", label: "RESUME" },
   { id: "contact", label: "CONTACT" },
   { id: "bonus", label: "BONUS" },

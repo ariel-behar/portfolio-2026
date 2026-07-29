@@ -3,11 +3,12 @@ import type { EmploymentPosition } from "@/types";
 export const employment: EmploymentPosition[] = [
   {
     id: 1,
-    order: 0,
+    order: 1,
     role: "Software Engineer",
     company: "The Kingdom Bank",
     companyUrl: "https://www.thekingdombank.com/",
     companyLogo: "kingdom-bank.jpg",
+    companyLogoBg: "bg-[#FF3131]",
     companyDescription:
       "Digital banking platform - private and corporate accounts, multi-currency management, payments and FX.",
     startYear: 2025,
@@ -18,7 +19,7 @@ export const employment: EmploymentPosition[] = [
   },
   {
     id: 2,
-    order: 1,
+    order: 2,
     role: "Software Engineer",
     company: "Jeton",
     companyUrl: "https://www.jeton.com/",
@@ -33,11 +34,12 @@ export const employment: EmploymentPosition[] = [
   },
   {
     id: 3,
-    order: 2,
+    order: 3,
     role: "Software Engineer",
     company: "Nexo",
     companyUrl: "https://nexo.com/",
     companyLogo: "nexo.jpg",
+    companyLogoBg: "bg-[#0A0D12]",
     companyDescription:
       "Crypto wealth platform managing $7B+ in assets across 200+ jurisdictions - buy, earn, borrow and spend digital assets, all from one account.",
     startYear: 2024,
@@ -48,7 +50,7 @@ export const employment: EmploymentPosition[] = [
   },
   {
     id: 4,
-    order: 3,
+    order: 0,
     role: "IT & Operations Manager",
     company: "Ivylu",
     companyUrl: "https://www.ivylu.bg/",
@@ -66,6 +68,7 @@ export const employment: EmploymentPosition[] = [
     company: "Candy Catz",
     companyUrl: "https://www.candycatz.com/",
     companyLogo: "candycatz.jpg",
+    companyLogoBg: "bg-neutral",
     companyDescription:
       "Official web store of the Candy Catz fashion brand, built for a US audience immersed in rave culture.",
     startYear: 2023,

@@ -4,7 +4,7 @@ import { SkillsGallery } from "./SkillsGallery";
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="mx-auto max-w-300 scroll-mt-7.5 px-4 min-[600px]:px-6">
+    <section id="skills" className="mx-auto max-w-300 scroll-mt-7.5 px-4 min-[600px]:px-6 mb-5">
       <SkillsGallery skills={skills} />
     </section>
   );
