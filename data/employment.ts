@@ -80,6 +80,7 @@ export const employment: EmploymentPosition[] = [
   {
     id: 6,
     order: 5,
+    show: false,
     role: "React & Shopify Developer",
     company: "Rave Kitty",
     companyUrl: "https://www.ravekitties.com/",

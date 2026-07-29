@@ -8,7 +8,11 @@ interface ProjectDetailsBoxProps {
 
 export function ProjectDetailsBox({ selectedProject }: ProjectDetailsBoxProps) {
   return (
-    <div className="h-127.5 overflow-y-auto rounded-[20px] bg-black/30 px-3.75 py-2.5 min-[600px]:h-112.5 min-[1200px]:h-130">
+    <div
+      className={`rounded-[20px] bg-black/30 px-3.75 py-2.5 min-[600px]:h-112.5 min-[600px]:overflow-y-auto min-[1200px]:h-130 ${
+        selectedProject ? "" : "h-32 overflow-y-auto"
+      }`}
+    >
       {selectedProject ? (
         <ProjectCard project={selectedProject} />
       ) : (
