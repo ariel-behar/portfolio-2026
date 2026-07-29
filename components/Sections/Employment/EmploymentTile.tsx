@@ -12,7 +12,7 @@ interface EmploymentTileProps {
 
 export function EmploymentTile({ position, href, onClick }: EmploymentTileProps) {
   const className =
-    "flex w-32 cursor-pointer flex-col items-center gap-2 rounded-2xl px-2 py-3 text-center transition-transform duration-200 ease-linear hover:-translate-y-1.5";
+    "flex w-24 cursor-pointer flex-col items-center gap-2 rounded-2xl px-0 py-3 text-center transition-transform duration-200 ease-linear hover:-translate-y-1.5 min-[600px]:w-32 min-[600px]:px-2";
 
   const content = (
     <>
@@ -21,11 +21,11 @@ export function EmploymentTile({ position, href, onClick }: EmploymentTileProps)
         alt={`${position.company} logo`}
         width={80}
         height={80}
-        className={`h-20 w-20 shrink-0 rounded-full object-contain p-1 shadow-[0_6px_16px_rgba(0,0,0,0.45)] ring-4 ring-white ${position.companyLogoBg ?? "bg-white"}`}
+        className={`h-16 w-16 shrink-0 rounded-full object-contain p-1 shadow-[0_6px_16px_rgba(0,0,0,0.45)] ring-4 ring-white min-[600px]:h-20 min-[600px]:w-20 ${position.companyLogoBg ?? "bg-white"}`}
       />
 
       <div>
-        <p className="whitespace-nowrap font-bold">{position.company}</p>
+        <p className="text-xs font-bold whitespace-nowrap min-[600px]:text-base">{position.company}</p>
         <p className="text-xs text-muted-light">{position.role}</p>
       </div>
     </>

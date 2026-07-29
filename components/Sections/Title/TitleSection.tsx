@@ -11,14 +11,12 @@ export function TitleSection() {
         className="h-full bg-left bg-no-repeat bg-cover min-[576px]:bg-auto"
       >
         <div className="flex h-full flex-col items-center justify-center bg-linear-[-45deg] from-[#4096ee]/50 to-[#f0f8ff]/50 px-4 text-center max-[899px]:from-[#4096ee]/80 max-[899px]:to-[#f0f8ff]/80">
-          <h1 className="mb-4 font-display text-[2.6rem] leading-[2.1rem] min-[900px]:text-[4rem] min-[900px]:leading-[3.5rem]">
+          <h1 className="mb-1 font-display text-[clamp(1.35rem,8vw,2.6rem)] leading-tight whitespace-nowrap min-[900px]:text-[4rem] min-[900px]:leading-[3.5rem]">
             ARIEL BEHAR
           </h1>
 
-          <h2 className="text-2xl">
-            Design &amp; Development
-            <br className="min-[900px]:hidden" />
-            &nbsp;Done Differently
+          <h2 className="text-[clamp(0.85rem,4.2vw,1.5rem)] whitespace-nowrap">
+            Design &amp; Development&nbsp;Done Differently
           </h2>
 
           <p className="mt-2 text-xs tracking-[0.2em] text-neutral/60 uppercase">- Est. 2017 -</p>

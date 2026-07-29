@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { S3_BASE_URL } from "@/constants";
 import type { Project } from "@/types";
@@ -10,11 +10,29 @@ interface ProjectsThumbnailsListProps {
 
 // Two full rows' worth at the most common desktop breakpoint; the rest only renders
 // once "Display More" is clicked, so the grid doesn't spill into a sparse third row.
-const INITIAL_VISIBLE_COUNT = 16;
+const DESKTOP_INITIAL_VISIBLE_COUNT = 16;
+// On narrow (< 600px) viewports, far fewer thumbnails fit per row, so the same count
+// would stretch across many more rows than intended - cap it lower there instead.
+const MOBILE_INITIAL_VISIBLE_COUNT = 9;
+const MOBILE_BREAKPOINT_QUERY = "(min-width: 600px)";
 
 export function ProjectsThumbnailsList({ projects, onSelectProject }: ProjectsThumbnailsListProps) {
   const [showAll, setShowAll] = useState(false);
-  const visibleProjects = showAll ? projects : projects.slice(0, INITIAL_VISIBLE_COUNT);
+  const [initialVisibleCount, setInitialVisibleCount] = useState(DESKTOP_INITIAL_VISIBLE_COUNT);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia(MOBILE_BREAKPOINT_QUERY);
+    const updateCount = (isDesktop: boolean) =>
+      setInitialVisibleCount(isDesktop ? DESKTOP_INITIAL_VISIBLE_COUNT : MOBILE_INITIAL_VISIBLE_COUNT);
+
+    updateCount(mediaQuery.matches);
+    const listener = (event: MediaQueryListEvent) => updateCount(event.matches);
+    mediaQuery.addEventListener("change", listener);
+    return () => mediaQuery.removeEventListener("change", listener);
+  }, []);
+
+  const visibleProjects = showAll ? projects : projects.slice(0, initialVisibleCount);
+  const remainingCount = projects.length - initialVisibleCount;
 
   return (
     <div className="mt-4 flex flex-col items-center gap-4">
@@ -38,13 +56,13 @@ export function ProjectsThumbnailsList({ projects, onSelectProject }: ProjectsTh
         ))}
       </div>
 
-      {!showAll && projects.length > INITIAL_VISIBLE_COUNT && (
+      {!showAll && remainingCount > 0 && (
         <button
           type="button"
           onClick={() => setShowAll(true)}
           className="cursor-pointer rounded border border-white px-3 py-1 text-xs font-medium tracking-wide text-white uppercase hover:bg-white/10"
         >
-          Display More...
+          Display {remainingCount} more {remainingCount === 1 ? "project" : "projects"}...
         </button>
       )}
     </div>

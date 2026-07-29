@@ -3,7 +3,7 @@ import { employment } from "@/data";
 import { EmploymentGallery } from "./EmploymentGallery";
 
 export function EmploymentSection() {
-  const positions = [...employment].sort((a, b) => a.order - b.order);
+  const positions = employment.filter((position) => position.show !== false).sort((a, b) => a.order - b.order);
 
   return (
     <section id="employment" className="mx-auto max-w-300 px-4 py-6 min-[600px]:px-6">

@@ -27,7 +27,7 @@ export function AboutSection() {
 
       <div className="relative mx-auto max-w-300 pl-2 min-[900px]:pl-0">
         <div className="flow-root max-w-225">
-          <h4 className="mb-4 font-sans text-3xl">About Me</h4>
+          <h4 className="mb-4 text-center font-sans text-3xl min-[600px]:text-left">About Me</h4>
 
           <div className="relative float-right mb-2 ml-4 h-[175px] w-[204px] min-[600px]:hidden">
             <Image
@@ -35,6 +35,11 @@ export function AboutSection() {
               alt="Ariel Behar Photo"
               fill
               className="object-contain"
+            />
+
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-x-0 bottom-0 h-8 bg-linear-to-b from-transparent to-neutral"
             />
           </div>
 
@@ -49,7 +54,7 @@ export function AboutSection() {
 
         <div className="mt-4 flex max-w-[950px] flex-col min-[600px]:flex-row min-[600px]:justify-between">
           <div className="order-2 w-full min-[600px]:order-1 min-[600px]:w-[70%]">
-            <h4 className="mb-4 font-sans text-3xl">Languages</h4>
+            <h4 className="mb-4 text-center font-sans text-3xl min-[600px]:text-left">Languages</h4>
 
             <div className="grid grid-cols-3 gap-4 min-[900px]:grid-cols-6">
               {languages.map((language) => (
@@ -64,7 +69,7 @@ export function AboutSection() {
           </div>
 
           <div className="order-1 my-4 flex w-full flex-col min-[600px]:order-2 min-[600px]:my-0 min-[600px]:w-[30%]">
-            <h4 className="font-sans text-3xl text-left min-[900px]:text-center">Experience</h4>
+            <h4 className="font-sans text-3xl text-center mb-2 lg:mb-0">Experience</h4>
 
             <div className="flex flex-1 flex-col items-center justify-center min-[600px]:mb-1">
               <p className="text-center text-[130px] leading-[0.8] text-white">

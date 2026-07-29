@@ -66,6 +66,9 @@ export interface DanielProject {
 export interface EmploymentPosition {
   id: number;
   order: number;
+  // Omitted (or true) shows the position; set to false to keep the entry in the data
+  // without rendering it, e.g. while it's between draft and ready to publish.
+  show?: boolean;
   role: string;
   company: string;
   companyUrl: string;
