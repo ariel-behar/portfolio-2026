@@ -2,6 +2,7 @@ export * from "./About";
 export * from "./Bonus";
 export * from "./Contact";
 export * from "./Documents";
+export * from "./Employment";
 export * from "./Hero";
 export * from "./Photoshop";
 export * from "./Projects";

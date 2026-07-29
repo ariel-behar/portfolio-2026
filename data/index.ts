@@ -1,3 +1,4 @@
+export * from "./employment";
 export * from "./projects";
 export * from "./mockup-projects";
 export * from "./three-js-projects";

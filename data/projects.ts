@@ -2,8 +2,25 @@ import type { Project } from "@/types";
 
 export const projects: Project[] = [
   {
-    id: 1,
+    id: 17,
     order: 0,
+    title: "IvyLu - Bridal Beauty",
+    image: "ivylu-bridal-beauty.png",
+    description:
+      "Official website of IvyLu, a bridal hair and makeup studio in Sofia, Bulgaria, offering wedding-day styling and professional makeup services.",
+    myRole:
+      "As IT & Operations Manager for the business, I served as sole designer and developer, building the site from the ground up with Next.js, including full bilingual (Bulgarian/English) support - on top of the SEO, digital marketing, and IT/DevOps work that keeps it running.",
+    technologies: ["NextJS", "TypeScript", "Tailwind", "DaisyUI", "MongoDB", "Mongoose", "AWS S3", "Next Intl"],
+    month: "April",
+    year: 2025,
+    url: "https://www.ivylu.bg/",
+    type: "Next",
+    category: "real",
+    notes: [],
+  },
+  {
+    id: 1,
+    order: 1,
     title: "Baby Journal",
     image: "baby-journal.png",
     description:
@@ -20,7 +37,7 @@ export const projects: Project[] = [
   },
   {
     id: 2,
-    order: 1,
+    order: 2,
     title: "Candy Catz",
     image: "candy-catz.png",
     description: "Official web store of the Candy Catz fashion brand",
@@ -36,7 +53,7 @@ export const projects: Project[] = [
   },
   {
     id: 3,
-    order: 2,
+    order: 3,
     title: "Rave Kitty",
     image: "rave-kitty.png",
     description: "Official web store of the Rave Kitty fashion brand",
@@ -52,7 +69,7 @@ export const projects: Project[] = [
   },
   {
     id: 4,
-    order: 3,
+    order: 4,
     title: "Stitch Sense",
     image: "stitch-sense.png",
     description: "Official web site of the Stitch Sense clothing manufacturer",
@@ -68,7 +85,7 @@ export const projects: Project[] = [
   },
   {
     id: 5,
-    order: 4,
+    order: 5,
     title: "Travel@Style",
     image: "travel-at-style.png",
     description: "eCommerce platform for a New York based store focusing on travel apparel and hand-held steamer irons.",
@@ -84,7 +101,7 @@ export const projects: Project[] = [
   },
   {
     id: 6,
-    order: 5,
+    order: 6,
     title: "IvyLu - Art & Beauty",
     image: "ivylu.png",
     description: "Official web app of the IvyLu beauty salon",
@@ -100,7 +117,7 @@ export const projects: Project[] = [
   },
   {
     id: 7,
-    order: 6,
+    order: 7,
     title: "VX Aviation",
     image: "vx-aviation.png",
     description: "Company site for a Tampa Bay-based personal flight training school.",
@@ -116,7 +133,7 @@ export const projects: Project[] = [
   },
   {
     id: 8,
-    order: 7,
+    order: 8,
     title: "Brasileirão 2019",
     image: "brasileirao.png",
     description: 'A fictional website on the topic of the "Brasileirão" 2019 Soccer Championship',
@@ -132,7 +149,7 @@ export const projects: Project[] = [
   },
   {
     id: 9,
-    order: 8,
+    order: 9,
     title: "Ariel Behar Portfolio",
     image: "portfolio.png",
     description: "My personal portfolio. Version 3.0",
@@ -148,7 +165,7 @@ export const projects: Project[] = [
   },
   {
     id: 10,
-    order: 9,
+    order: 10,
     title: "A&M GameHub",
     image: "am-gamehub.png",
     description: "A desktop based web application to assist my little sisters learn English, European geography and Hebrew.",
@@ -164,7 +181,7 @@ export const projects: Project[] = [
   },
   {
     id: 11,
-    order: 10,
+    order: 11,
     title: "Blago-darya",
     image: "blago-darya.png",
     description:
@@ -181,7 +198,7 @@ export const projects: Project[] = [
   },
   {
     id: 12,
-    order: 11,
+    order: 12,
     title: "eSports Marketing Group",
     image: "esports.png",
     description: "Online marketing firm for eSports competitors. The site is a hub for people to receive representation and marketing tools on a professional level.",
@@ -197,7 +214,7 @@ export const projects: Project[] = [
   },
   {
     id: 13,
-    order: 12,
+    order: 13,
     title: "T&T Customs",
     image: "tt.png",
     description: "The site is a front for a business creating custom apparel for school sports teams in the Tampa Bay area.",
@@ -213,7 +230,7 @@ export const projects: Project[] = [
   },
   {
     id: 14,
-    order: 13,
+    order: 14,
     title: "The Credit Score Guru",
     image: "guru.png",
     description: "Credit repair site aiming to present viable options for people to fix their credit score and create positive purchasing habits in the future.",
@@ -229,7 +246,7 @@ export const projects: Project[] = [
   },
   {
     id: 15,
-    order: 14,
+    order: 15,
     title: "HUG Tampa Bay",
     image: "hug.png",
     description: "A Tampa based non-profit organization that strives to connect people with disabilities to social activities and events in the community",
@@ -245,7 +262,7 @@ export const projects: Project[] = [
   },
   {
     id: 16,
-    order: 15,
+    order: 16,
     title: "Body Wrap Spalon",
     image: "ispalon.png",
     description: "An Oklahoma based Spa Services website. The site appeals mainly to women, but offers treatments also for men.",
