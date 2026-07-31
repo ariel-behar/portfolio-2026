@@ -29,7 +29,7 @@ export function EmploymentGallery({ positions }: EmploymentGalleryProps) {
         </Modal>
       )}
 
-      <div className="grid grid-cols-3 justify-items-center gap-y-6 py-4 min-[600px]:grid-cols-4 min-[900px]:grid-cols-7">
+      <div className="flex flex-wrap justify-center gap-x-4 gap-y-6 py-4 min-[900px]:justify-around">
         {positions.map((position) =>
           EMPLOYMENT_MODAL_ENABLED ? (
             <EmploymentTile key={position.id} position={position} onClick={() => setOpenId(position.id)} />
