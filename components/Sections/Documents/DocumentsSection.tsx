@@ -19,7 +19,7 @@ export function DocumentsSection() {
       <div className="mx-auto max-w-300 px-4 min-[600px]:px-6">
         {/* text.secondary in the old theme is #e0e0e0 (grey) — this project's text-base-content,
             not Tailwind/DaisyUI's own "secondary" (green). See [[feedback-mui-color-prop-bug]]. */}
-        <h3 className="my-6 text-[2.2rem] leading-[2.3rem] text-base-content min-[900px]:text-[2.5rem] min-[900px]:leading-[2.6rem]">
+        <h3 className="my-6 text-center text-[2.2rem] leading-[2.3rem] text-base-content min-[900px]:text-[2.5rem] min-[900px]:leading-[2.6rem]">
           Some Reading Material
         </h3>
 
